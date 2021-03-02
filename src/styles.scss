@@ -6,3 +6,11 @@ body{
   box-sizing: border-box;
   // background: rgb(245, 240, 240);
 }
+
+.app-border-radius{
+  border-radius: 1em !important;
+}
+
+main{
+  min-height: calc(100vh - 73px - 88px);
+}

@@ -1,6 +1,18 @@
-
+.brand-logo{
+  cursor: pointer;
+}
 .nav-item{
   cursor: pointer;
+}
+.navbar-nav{
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-link{
+  margin: 10px;
+  padding: 5px;
 }
 
 

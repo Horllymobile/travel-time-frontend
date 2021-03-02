@@ -1,22 +1,53 @@
 <div class="container text-secondary">
-  <div class="mt-3">
+  <nav class="mt-3" *ngIf="!isMobile()">
+    <h3 class="mb-5 text-white brand-logo" routerLink="/">Logo</h3>
     <ul class="nav flex-column text-white">
-      <h3 class="mb-5">Logo</h3>
       <li class="nav-item mb-5 p-2" [routerLink]="['/dashboard']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
-        <i class="material-icons">dashboard</i>Dashboard
+        <i class="fas fa-th-large"></i> Dashboard
       </li>
       <li class="nav-item mb-5 p-2" [routerLink]="['/travels']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
-        <i class="material-icons">flight</i>All Travel & Tours
+        <i class="fas fa-plane"></i> All Travel & Tours
       </li>
       <li class="nav-item mb-5 p-2" [routerLink]="['/add']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
-        <i class="material-icons">add</i>Add Travel
+        <i class="fas fa-plus-circle"></i> Add Travel
       </li>
       <li class="nav-item mb-5 p-2" [routerLink]="['/info']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
-        <i class="material-icons">info</i> My Info
+        <i class="fas fa-info-circle"></i> My Info
       </li>
       <li class="nav-item mb-5 p-2" [routerLink]="['/settings']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
-        <i class="material-icons">settings</i>Settings
+        <i class="fas fa-cog"></i> Settings
       </li>
     </ul>
-  </div>
+  </nav>
+  <nav *ngIf="isMobile()" class="navbar mb-3 navbar-expand-lg navbar-light bg-transparent">
+    <div class="container-fluid">
+      <a class="mb-5 text-white brand-logo navbar-brand" routerLink="/">
+        <img src="../../../assets/imgs/logo.jpg" alt="Travel Time Logo" width="50px" height="50px" >
+        Travel-Time
+      </a>
+      <span class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-ellipsis-v"></i>
+      </span>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" [routerLink]="['/dashboard']"
+           [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
+           <i class="fas fa-th-large"></i>
+          </a>
+          <a class="nav-link" [routerLink]="['/travels']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
+            <i class="fas fa-plane"></i>
+          </a>
+          <a class="nav-link" [routerLink]="['/add']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
+            <i class="fas fa-plus-circle"></i>
+          </a>
+          <a class="nav-link" [routerLink]="['/info']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
+            <i class="fas fa-info-circle"></i>
+          </a>
+          <a class="nav-link" [routerLink]="['/settings']" [routerLinkActive]="['bg-white', 'text-dark', 'rounded']">
+            <i class="fas fa-cog"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </div>

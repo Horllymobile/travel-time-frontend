@@ -24,6 +24,17 @@ export class HeaderComponent implements OnInit {
       return 'travels';
     }
 
+    if(this.router.url === '/add'){
+      return 'Add travels';
+    }
+    if(this.router.url === '/info'){
+      return 'Info';
+    }
+
+    if(this.router.url === '/settings'){
+      return 'Settings';
+    }
+
     return ''
   }
 
