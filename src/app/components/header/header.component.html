@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h4 class="mt-4 text-secondary" *ngIf="getRouteTitle()"> {{ getRouteTitle() }} </h4>
+  </div>
+  <div class="col-lg-6">
+    <div class="row">
+      <div class="col-9">
+        <div class="form-group mt-4 input-icons">
+          <input type="search"  class="form-control search" placeholder="Search Travels">
+        </div>
+      </div>
+      <div class="col-3 mt-3">
+        <div class="dropdown">
+            <img src="./../../../assets/imgs/smiling-girl-avatar_102172-32.jpg"
+            alt="Avatar" width="50" height="50"
+            class="img-responsive border avatar dropdown-toggle border-primary rounded-circle"
+            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a class="dropdown-item" href="#"><i class="material-icons">edit</i>Edit Profile</a>
+            </li>
+            <li><a class="dropdown-item" href="#">
+              <i class="material-icons">logout</i>
+              Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
