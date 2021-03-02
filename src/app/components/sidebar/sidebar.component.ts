@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { Observable } from 'rxjs';
-declare const $:any;
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -14,7 +11,7 @@ export class SidebarComponent implements OnInit {
   }
 
   isMobile():boolean{
-    if($(window).width() < 768){
+    if(window.screen.width < 768){
       return true;
     }
     return false
