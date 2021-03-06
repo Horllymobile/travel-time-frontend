@@ -1,1 +1,52 @@
-<p>register works!</p>
+
+<h1 class="text-light mt-5 text-center">Sign up for The Time Travel</h1>
+<div class="container mb-5 card mx-auto my-auto bg-light form-container">
+
+  <form class="mt-5  form mx-auto" [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <div class="form-group">
+      <label for="firstname" class="form-label">First Name</label>
+      <input type="firstname" id="firstname" class="form-control" formControlName="firstname">
+    </div>
+
+    <div class="form-group">
+      <label for="lastname" class="form-label">Last Name</label>
+      <input type="lastname" id="lastname" class="form-control" formControlName="lastname">
+    </div>
+
+    <div class="form-group">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" id="username" class="form-control" formControlName="username">
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" id="phone" class="form-control" formControlName="phone">
+    </div>
+
+
+    <div class="form-group mt-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="cpassword" class="form-label">Confirm Password</label>
+      <input type="password" id="cpassword" class="form-control" formControlName="cpassword">
+    </div>
+
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-info" [disabled]="registerForm.invalid">Sign in</button>
+    </div>
+
+    <p class="text-center">Already have account? <a [routerLink]="['/login']" class="text-info">Sign in</a></p>
+
+  </form>
+
+</div>
+

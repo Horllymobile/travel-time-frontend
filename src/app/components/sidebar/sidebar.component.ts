@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+declare let $:any;
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -10,11 +12,13 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isMobile():boolean{
-    if(window.screen.width < 768){
-      return true;
-    }
-    return false
-  }
+  isMobileMenu() {
+    // if ($(window).width() > 768) {
+    //   console.log($(window).width());
+    //   return false;
+    // }
+    // console.log($(window).width());
+    // return true;
+};
 
 }

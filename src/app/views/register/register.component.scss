@@ -1,0 +1,21 @@
+.form-container{
+  width: 40%;
+  margin-top: 5em !important;
+}
+
+.form{
+  width: 70%;
+}
+
+@media screen and (max-width: 768px){
+
+  .form-container{
+    width: 95% !important;
+    margin-top: 2em !important;
+  }
+
+  .form{
+    width: 100% !important;
+  }
+
+}

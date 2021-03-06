@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
     ComponentsModule
   ],
   exports: [
+    TravelsComponent,
+    HomeComponent
   ]
 })
 export class DashboardModule { }
