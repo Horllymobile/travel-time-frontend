@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { Form, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Token } from 'src/app/models/token';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,14 +14,15 @@ export class LoginComponent implements OnInit {
   errorMessage!:string;
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      username: new FormControl(''),
-      password: new FormControl('')
-    });
+    this.loginForm = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    })
   }
 
   login(){
@@ -30,10 +31,13 @@ export class LoginComponent implements OnInit {
     .subscribe((data:Token) => {
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('refreshToken', data.refreshToken);
+      localStorage.setItem('currentUser', JSON.stringify(data.user));
       window.location.href = '/';
     },err => {
-      console.log(err);
       this.errorMessage = err.error.message;
+      setTimeout(() => {
+        this.errorMessage = ''
+      }, 2000);
     });
 
   }

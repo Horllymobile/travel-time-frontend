@@ -33,6 +33,7 @@ import { InMemHeroService } from './services/in-memory-data.service';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
     DashboardModule,
    // HttpClientInMemoryWebApiModule.forRoot(InMemHeroService),
@@ -44,7 +45,6 @@ import { InMemHeroService } from './services/in-memory-data.service';
      }
    }),
     ComponentsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
 
   ],

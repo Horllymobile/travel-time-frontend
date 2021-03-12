@@ -37,7 +37,7 @@ export class AuthService {
     return false;
   }
 
-  token(){
+  token():Observable<any>{
     const refreshToken = localStorage.getItem('refreshToken');
     return this.http.post(`${baseUrl}/token`, {refreshToken});
   }
@@ -48,7 +48,6 @@ export class AuthService {
   }
 
   register(user:User):Observable<any>{
-    console.log(user);
     return this.http.post<any>(`${baseUrl}/users`,user);
   }
 }

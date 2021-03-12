@@ -18,13 +18,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.user = this.userService.user;
-    console.log(this.userService.user);
+    this.getCurrentUser();
   }
 
-
   getCurrentUser(){
-    console.log('running');
+    this.user = this.userService.user;
   }
 
 }
