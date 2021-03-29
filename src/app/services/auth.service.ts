@@ -30,7 +30,7 @@ export class AuthService {
           return true;
         },
         err => {
-          console.log(err);
+          //console.log(err);
           return false;
         }
       )
