@@ -5,7 +5,8 @@ import { LoginUser } from '../models/login';
 import { Token } from '../models/token';
 import { User } from '../models/user';
 import { JwtHelperService } from '@auth0/angular-jwt';
-const baseUrl = 'http://localhost:5000/api/auth'
+import { environment } from './../../environments/environment';
+const baseUrl = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
 })
@@ -39,15 +40,15 @@ export class AuthService {
 
   token():Observable<any>{
     const refreshToken = localStorage.getItem('refreshToken');
-    return this.http.post(`${baseUrl}/token`, {refreshToken});
+    return this.http.post(`${baseUrl}api/auth/token`, {refreshToken});
   }
 
 
   login(user:LoginUser):Observable<Token>{
-    return this.http.post<Token>(`${baseUrl}/login`, user);
+    return this.http.post<Token>(`${baseUrl}api/auth/login`, user);
   }
 
   register(user:User):Observable<any>{
-    return this.http.post<any>(`${baseUrl}/users`,user);
+    return this.http.post<any>(`${baseUrl}api/auth/register`,user);
   }
 }
