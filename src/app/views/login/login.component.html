@@ -1,6 +1,5 @@
 <h1 class="text-light mt-5 text-center">Sign in to The Time Travel</h1>
 <div class="container card mx-auto my-auto bg-light form-container">
-<<<<<<< HEAD
   <form class="mt-5 form mx-auto" [formGroup]="loginForm" (ngSubmit)="login()">
     <small *ngIf="errorMessage" class="text-danger text-center">
       {{ errorMessage }}
@@ -27,24 +26,12 @@
           loginForm.get('username')?.invalid
         "
       >
-=======
-
-  <form class="mt-5 form mx-auto" [formGroup]="loginForm" (ngSubmit)="login()" autoFill="on">
-
-    <div class="form-group">
-      <label for="username" class="form-label">Username</label>
-      <input type="username" id="email" class="form-control"
-      [ngClass]="{'is-invalid': loginForm.get('username')?.touched && !loginForm.get('username')?.dirty}"
-      formControlName="username">
-      <small class="invalid-feedback" *ngIf="loginForm.get('username')?.touched && !loginForm.get('username')?.dirty">
->>>>>>> d522d7dc718653e3189c1be3ffa9301c891efd4e
         Username is required
       </small>
     </div>
 
     <div class="form-group mt-3">
       <label for="password" class="form-label">Password</label>
-<<<<<<< HEAD
       <input
         type="password"
         id="password"
@@ -65,12 +52,6 @@
         loginForm.get('password')?.invalid
         "
       >
-=======
-      <input type="password" id="password" class="form-control"
-      [ngClass]="{'is-invalid': loginForm.get('password')?.touched && !loginForm.get('password')?.dirty}"
-      formControlName="password">
-      <small class="invalid-feedback" *ngIf="loginForm.get('password')?.touched && !loginForm.get('password')?.dirty">
->>>>>>> d522d7dc718653e3189c1be3ffa9301c891efd4e
         Password is required
       </small>
     </div>
